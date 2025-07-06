@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@originjs/vite-plugin-federation": "^1.4.1",
-    "@tailwindcss/vite": "^4.1.11",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-vue": "^6.0.0",

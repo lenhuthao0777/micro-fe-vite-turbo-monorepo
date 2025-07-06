@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import federation from '@originjs/vite-plugin-federation';
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from 'tailwindcss'
 export default defineConfig({
   plugins: [
     vue(),
