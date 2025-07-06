@@ -12,13 +12,13 @@ declare module 'cue_remote/store' {
   export const useSharedStore: () => SharedStore;
 }
 
-declare module 'cue_remote/app' {
+declare module 'cue_remote/' {
   import { DefineComponent } from 'vue';
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
 
-declare module 'react_remote/ReactApp' {
+declare module 'react_remote/' {
   import * as React from 'react';
   const ReactApp: React.ComponentType<any>;
   export default ReactApp;

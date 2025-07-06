@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import './App.css';
 
 type PropsTypes = {
   name: string;
