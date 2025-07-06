@@ -11,9 +11,11 @@
     "preview": "turbo run preview",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "start": "concurrently \"turbo run dev --filter host\" \"turbo run build\""
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "turbo": "^2.5.4"
   }
 }
