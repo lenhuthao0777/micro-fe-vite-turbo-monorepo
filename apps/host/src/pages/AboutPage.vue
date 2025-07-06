@@ -12,7 +12,7 @@
     </div>
     <Suspense>
       <template #default>
-        <RemoteComponent />
+        <RemoteComponent msg="host app 121212" />
       </template>
       <template #fallback>
         <div>Loading remote component...</div>

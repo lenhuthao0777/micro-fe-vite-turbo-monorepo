@@ -10,10 +10,14 @@ import { onMounted, ref } from 'vue';
 import { createRoot } from 'react-dom/client';
 import React from 'react';
 
-// Dynamically import the React component from the remote
 const ReactApp = React.lazy(() => import('react_remote/ReactApp'));
 
 const reactRoot = ref(null);
+
+// Define the props you want to pass
+const props = {
+  name: 'props',
+};
 
 onMounted(() => {
   if (reactRoot.value) {
@@ -22,7 +26,7 @@ onMounted(() => {
       React.createElement(
         React.Suspense,
         { fallback: 'Loading React Component...' },
-        React.createElement(ReactApp)
+        React.createElement(ReactApp, props)
       )
     );
   }
