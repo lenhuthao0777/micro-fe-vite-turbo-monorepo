@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import federation from '@originjs/vite-plugin-federation';
 import tailwindcss from 'tailwindcss'
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -10,11 +11,15 @@ export default defineConfig({
       name: 'host-app',
       remotes: {
         react_remote: {
-          external: 'http://localhost:5002/assets/remoteEntry.js',
+          external: process.env.NODE_ENV === 'production' 
+            ? 'https://your-domain.com/react-remote/assets/remoteEntry.js'  // Replace with your domain
+            : 'http://localhost:5002/assets/remoteEntry.js',
           externalType: 'url',
         },
         cue_remote: {
-          external: 'http://localhost:5001/assets/remoteEntry.js',
+          external: process.env.NODE_ENV === 'production'
+            ? 'https://your-domain.com/cue/assets/remoteEntry.js'  // Replace with your domain
+            : 'http://localhost:5001/assets/remoteEntry.js',
           externalType: 'url',
         }
       },

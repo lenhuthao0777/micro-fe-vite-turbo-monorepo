@@ -32,7 +32,7 @@ COPY --from=builder /app/apps/cue/dist /usr/share/nginx/html/cue
 COPY --from=builder /app/apps/react-remote/dist /usr/share/nginx/html/react-remote
 
 # Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.prod.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 

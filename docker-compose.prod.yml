@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  micro-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Optional: for SSL certificates
+      - ./ssl:/etc/nginx/ssl:ro
+    networks:
+      - micro-frontend-network
+
+networks:
+  micro-frontend-network:
+    driver: bridge
